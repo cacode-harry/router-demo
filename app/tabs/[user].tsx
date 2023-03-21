@@ -24,20 +24,19 @@ export default function User() {
   return (
     <View
       style={{
-        justifyContent: 'center',
         flex: 1,
         alignItems: 'center',
       }}
     >
-      <View>
+      <TouchableOpacity
+        onPress={() => {
+          route.back();
+        }}
+      >
+        <Text>⬅️Go back</Text>
+      </TouchableOpacity>
+      <View style={{flex: 1, justifyContent: 'center'}}>
         <Stack.Screen options={{title: 'User screen'}} />
-        <TouchableOpacity
-          onPress={() => {
-            route.back();
-          }}
-        >
-          <Text style={styles.title}>⬅️Go back</Text>
-        </TouchableOpacity>
         <Text style={styles.title}>{name}</Text>
         <Text style={[styles.subTitle, {marginBottom: 40}]}>
           Press one for dynamic route
